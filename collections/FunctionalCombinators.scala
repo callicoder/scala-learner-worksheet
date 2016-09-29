@@ -1,3 +1,6 @@
+// List(1, 2, 3) map squared applies the function squared to the elements of the list, 
+// returning a new list, perhaps List(1, 4, 9). We call operations like map combinators.
+
 object FunctionalCombinators {
 	def timesTwo(i: Int) = i*2
 
@@ -20,6 +23,12 @@ object FunctionalCombinators {
 		// returning a list with the same number of elements.		
 		println(numbers.map(timesTwo))
 
+
+		// foreach is like map but returns nothing. foreach is intended 
+		// for side-effects only.
+		val doubled = numbers.foreach((i: Int) => i * 2)
+		println(doubled)
+
 		// removes any elements where the function you pass in evaluates to false. 		  // Functions that return a Boolean are often called predicate functions.
 		println(numbers.filter(i => i%2 == 0))
 
@@ -37,5 +46,37 @@ object FunctionalCombinators {
 
 		// drop drops the first i elements
 		println(numbers.drop(3))
+
+		// foldLeft
+		// 0 is the starting value, m acts as an accumulator
+		val totalSum = numbers.foldLeft(0) { (m: Int, n: Int) => {
+				println("m: " + m + " n: " + n); 
+				m + n
+			} 
+		}
+		println(totalSum)
+
+		// foldRight
+		// Is the same as foldLeft except it runs in the opposite direction.
+		// Here 0 is the starting value and n acts as an accumulator
+		val totalSumFromRight = numbers.foldRight(0) { (m: Int, n: Int) => {
+				println("m: " + m + " n: " + n); 
+				m + n 
+			}
+		}
+		println(totalSumFromRight)
+
+		// flatten collapses one level of nested structure.
+		// Converts List of Lists to a single List
+		println(List(List(1,2), List(3,4)).flatten)
+
+		// flatMap is a frequently used combinator that combines mapping and 
+		// flattening. flatMap takes a function that works on the nested lists 
+		// and then concatenates the results back together.
+
+		val nestedNumbers = List(List(1, 2), List(3, 4))
+		val flattenedDoubledNumbers = nestedNumbers.flatMap(x => x.map(_ * 2))
+		println(flattenedDoubledNumbers)
 	}
 }
+
