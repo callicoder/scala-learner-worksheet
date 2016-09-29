@@ -1,3 +1,6 @@
+// Constructors aren’t special methods, they are the code outside of method definitions 
+// in your class
+
 class Calculator(brand: String) {
 	val color: String = if(brand == "TI") {
 		"blue"
