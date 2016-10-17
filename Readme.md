@@ -1,0 +1,1 @@
+I created this project while learning scala. It contains the illustration of various functional programming concepts in scala through code. The code illustrations are inspired from twitters's scala school - (https://twitter.github.io/scala_school/) and coursera's scala tutorial - (https://www.coursera.org/learn/progfun1)
