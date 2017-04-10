@@ -1,0 +1,19 @@
+// myObject myMethod 1 is same as calling myObject.myMethod(1)
+
+// Operator (i.e. function) names can be alphanumeric, symbolic (e.g. x1, *, +?%&, vector_++, counter_=)
+
+// The precedence of an operator is determined by its first character, with the following increasing order of priority:
+
+(all letters)
+|
+^
+&
+< >
+= !
+:
++ -
+* / %
+(all other special characters)
+
+
+// Note that assignment operators have lowest precedence. 

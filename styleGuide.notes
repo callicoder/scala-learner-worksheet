@@ -1,0 +1,30 @@
+#1 Avoid Casts and Type Tests
+Never use isInstanceOf or asInstanceOf - there’s always a better solution, both for the assignments, and also for any real-world Scala project.
+
+#2 Indentation
+In Scala, the standard is to indent using 2 spaces (no tabs).
+
+#3 Line Length and Whitespace
+Make sure the lines are not too long, otherwise your code is very hard to read. Instead of writing very long lines, introduce some local value bindings.
+Using whitespace uniformly makes your code more readable.
+
+#4 Use local Values to simplify complex Expressions
+When writing code in functional style, methods are often implemented as a combination of function calls. If such a combined expression grows too big, 
+the code might become hard to understand.
+In such cases it is better to store some arguments in a local value before passing them to the function
+
+#5 Choose meaningful Names for Methods and Values
+
+#6 Common Subexpressions
+You should avoid unnecessary invocations of computation-intensive methods. For example
+this.remove(this.findMin).ascending(t + this.findMin)
+
+Write this instead -
+val min = this.findMin
+this.remove(min).ascending(t + min)
+
+#7 Scala doesn’t require Semicolons
+
+#8 Avoid using Return
+
+#9 Avoid mutable local Variables
