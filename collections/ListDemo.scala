@@ -1,4 +1,5 @@
 // Lists preserve order, can contain duplicates, and are immutable.
+// (linked list, provides fast sequential access)
 object ListDemo {
 	def main(agrs: Array[String]): Unit = {
 		val numbers = List(1,2,3,4,5,1,2,3,4,5)
